@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.center {
+    padding: 0 calc(50% - 580px);
+}
+
+/*--------index---------*/
+header {
+    box-shadow: 0px 1px 24px rgba(0, 0, 0, 0.14);
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+}
+
+.favorite,
+.shopping-basket {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favorite img,
+.shopping-basket img {
+    width: 40px;
+    order: -1;
+    margin-right: 10px;
+}
+
+/*--------Content---------*/
+.item {
+    text-align: center;
+    width: 312px;
+}
+
+.main h2,
+.main h3 {
+    text-align: center;
+}
+
+.item img {
+    width: 200px;
+}
+
+.item {
+    box-shadow: 0px 1px 24px 0px black;
+    border-radius: 20px;
+}
+
+.main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left-nav {
+    margin-top: 50px;
+}
+
+.left-nav__ul {
+    width: 373px;
+    box-shadow: 0px 1px 24px 0px black;
+    border-radius: 20px;
+}
+
+.left-nav__ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 31px 0px 31px 0px;
+    font-size: 30px;
+}
+
+.left-nav__ul li a {
+    padding: 20px;
+    font-size: 42px;
+    display: flex;
+    align-items: center;
+    width: -webkit-fill-available;
+}
+
+.left-nav__ul li a img {
+    margin-right: 50px;
+    order: -1;
+    width: 30px;
+    height: 30px;
+}
+
+/*-----------Категори---------*/
+.wrap-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.product-title {
+    height: 40px;
+}
+
+.category {
+    text-align: center;
+}
+
+.product {
+    text-align: center;
+    text-align: center;
+    box-shadow: 0px 0px 13px;
+    border-radius: 20px;
+    padding: 50px 5px;
+}
+
+.product img {
+    width: 200px;
+    width: 200px;
+    object-fit: contain;
+    height: 200px;
+    margin-top: 25px;
+}
