@@ -5,8 +5,9 @@ section.category
     h2 #{cat[0]['category']}
     div.wrap-product.center
         each val, index in goods
-            div.product
-                p.product-title #{val.name}
-                img(src="img/"+val.image alt="foto")
-                h3 #{val.cost}
-                button В КОРЗИНУ
+            a(href="https://google.com") 
+                div.product 
+                    p.product-title #{val.name}
+                    img(src="img/"+val.image alt="foto" class="product__img")
+                    h3.product-cost #{val.cost}
+                    button.addToCart В КОРЗИНУ
