@@ -5,9 +5,9 @@ section.category
     h2 #{cat[0]['category']}
     div.wrap-product.center
         each val, index in goods
-            a(href="https://google.com") 
                 div.product 
-                    p.product-title #{val.name}
-                    img(src="img/"+val.image alt="foto" class="product__img")
-                    h3.product-cost #{val.cost}
+                    a(href="goods?id="+val['id']) 
+                        p.product-title #{val.name}
+                        img(src="img/"+val.image alt="foto" class="product__img")
+                        h3.product-cost #{val.cost.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$& ')} ₽
                     button.addToCart В КОРЗИНУ

@@ -9,7 +9,7 @@ app.use(express.static('public'));
 app.set('view engine', 'pug');
 /** Подключение модуля Mysql2*/
 const mysql = require('mysql2');
-/** Настраивание модул*/
+/** Настраивание модуля*/
 app.use(express.json());
 /** Подключение nodemailer*/
 const nodemailer = require('nodemailer');
@@ -71,5 +71,26 @@ app.get('/cat', (req, res) => {
             cat: JSON.parse(JSON.stringify(value[0])),
             goods: JSON.parse(JSON.stringify(value[1]))
         })
+    });
+});
+
+
+app.get('/goods', function (req, res) {
+    console.log(req.query.id);
+    con.query('SELECT * FROM goods WHERE id=' + req.query.id, function (error, result, fiels) {
+        if (error) throw error;
+        res.render('goods', {
+            goods: JSON.parse(JSON.stringify(result)),
+        });
+    });
+});
+
+
+app.post('/get-category-list', function (req,res){
+    // console.log(req);
+    con.query('SELECT id, category FROM category', function (error, result, fiels) {
+        if (error) throw error;
+        console.log(result);
+        res.json(result);
     });
 });
