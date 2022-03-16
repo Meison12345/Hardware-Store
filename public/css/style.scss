@@ -196,7 +196,7 @@ header {
 }
 
 #cart-nav {
-    margin: var(--left-right-space)
+    margin: var(--left-right-space);
 }
 
 .cart-order-link {
@@ -306,6 +306,7 @@ i {
 
 .left-nav {
     margin-top: 50px;
+    height: 650px;
 }
 
 .left-nav__ul {
