@@ -8,18 +8,21 @@ html(lang="ru")
         link(rel="shortcut icon" href="img/fav.ico" type="image/x-icon")
         link(rel="stylesheet" href="css/normalize.css")
         link(rel="stylesheet" href="css/style.css")
+        script(src="https://kit.fontawesome.com/543f278849.js")
+
     body
     header.center
         nav.wrapper
             h1 
-                a(href="/")  ТехноЭра
+                a(href="/" class="header-title")  ТехноЭра
 
             ul.nav
-                li 
-                    a(href="#" class="favorite") Избранное
-                        img(src="img/star-regular.svg" alt="Звезда")
+                //- li 
+                //-     a(href="#" class="favorite") Избранное
+                //-         img(src="img/star-regular.svg" alt="Звезда")
 
                 li 
-                    a(href="#" class="shopping-basket") Корзина
-                        img(src="img/shopping-basket-solid.svg" alt="Корзина")
+                    h1 
+                        a(href="/order" class="shopping-basket") Корзина
+                            img(src="img/shopping-basket-solid.svg" alt="Корзина")
 

@@ -1,7 +1,7 @@
 include header
 
 
-div.container.container-items.center
+div.container.container-items.center.wrapper-column
     div.goods
         h2(class='goods-title') #{goods[0]['name']}
     div.goods-img
@@ -14,5 +14,4 @@ div.container.container-items.center
             class="buttom-success add-to-cart"
             data-goods_id=goods[0]['id']            
             ) В КОРЗИНУ
-    include nav
 include footer

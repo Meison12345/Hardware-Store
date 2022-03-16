@@ -1,41 +1,70 @@
 main.main.center
     h2.main-title Актуальные предложения
-    h3.main-element Ноутбуки
-    div.main-wrapper
-        div.item
-            h4 Lenovo IdeaPad
-            img(src="img/14 laptop Lenovo Ideapad 3 14ITL05 silver.webp" alt="Lenovo laptop")
-            h5 20 000p
-            button(type="submit") В КОРЗИНУ
 
-        div.item
-            h4 Lenovo IdeaPad
-            img(src="img/14 laptop Lenovo Ideapad 3 14ITL05 silver.webp" alt="Lenovo laptop")
-            h5 20 000p
-            button(type="submit") В КОРЗИНУ
+    each val3, index3 in cat
+        if index3 < 2
+            h3 #{val3['category']}
+            div.main-wrapper
+                each val2, index2 in goods
+                    if val2['category'] == val3['id']
+                        div.item
+                            a(href="goods?id="+val2['id']) 
+                                h4 #{val2['name']}
+                                img(src="img/" + val2['image'] alt=val2['image'] class="main-img")
+                                h5 #{val2['cost'].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$& ')} ₽
+                            button(type="submit" class="add-to-cart index-cart" data-goods_id=val2['id']) КУПИТЬ
 
-        div.item
-            h4 Lenovo IdeaPad
-            img(src="img/14 laptop Lenovo Ideapad 3 14ITL05 silver.webp" alt="Lenovo laptop")
-            h5 20 000p
-            button(type="submit") В КОРЗИНУ
+        //- if index3 < 2
+        //-     h3 #{val3['category']}
+        //-     div.main-wrapper
+        //-         each val2, index2 in goods
+        //-             if val2['category'] == val3['id']
+        //-                 div.item
+        //-                     a(href="goods?id="+val2['id']) 
+        //-                         h4 #{val2['name']}
+        //-                         img(src="img/" + val2['image'] alt=val2['image'])
+        //-                         h5 #{val2['cost'].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$& ')} ₽
+        //-                     button(type="submit" class="add-to-cart index-cart" data-goods_id=val2['id']) В КОРЗИНУ
 
-    h3 Телефоны
-    div.main-wrapper
-        div.item
-            h4 Lenovo IdeaPad
-            img(src="img/14 laptop Lenovo Ideapad 3 14ITL05 silver.webp" alt="Lenovo laptop")
-            h5 20 000p
-            button(type="submit") В КОРЗИНУ
 
-        div.item
-            h4 Lenovo IdeaPad
-            img(src="img/14 laptop Lenovo Ideapad 3 14ITL05 silver.webp" alt="Lenovo laptop")
-            h5 20 000p
-            button(type="submit") В КОРЗИНУ
 
-        div.item
-            h4 Lenovo IdeaPad
-            img(src="img/14 laptop Lenovo Ideapad 3 14ITL05 silver.webp" alt="Lenovo laptop")
-            h5 20 000p
-            button(type="submit") В КОРЗИНУ
+
+
+
+        //- div.item
+        //-     h4 Lenovo IdeaPad
+        //-     img(src="img/14 laptop Lenovo Ideapad 3 14ITL05 silver.webp" alt="Lenovo laptop")
+        //-     h5 20 000p
+        //-     button(type="submit") В КОРЗИНУ
+
+    //-     div.item
+    //-         h4 Lenovo IdeaPad
+    //-         img(src="img/14 laptop Lenovo Ideapad 3 14ITL05 silver.webp" alt="Lenovo laptop")
+    //-         h5 20 000p
+    //-         button(type="submit") В КОРЗИНУ
+
+    //-     div.item
+    //-         h4 Lenovo IdeaPad
+    //-         img(src="img/14 laptop Lenovo Ideapad 3 14ITL05 silver.webp" alt="Lenovo laptop")
+    //-         h5 20 000p
+    //-         button(type="submit") В КОРЗИНУ
+
+    //- h3 Телефоны
+    //- div.main-wrapper
+    //-     div.item
+    //-         h4 Lenovo IdeaPad
+    //-         img(src="img/14 laptop Lenovo Ideapad 3 14ITL05 silver.webp" alt="Lenovo laptop")
+    //-         h5 20 000p
+    //-         button(type="submit") В КОРЗИНУ
+
+    //-     div.item
+    //-         h4 Lenovo IdeaPad
+    //-         img(src="img/14 laptop Lenovo Ideapad 3 14ITL05 silver.webp" alt="Lenovo laptop")
+    //-         h5 20 000p
+    //-         button(type="submit") В КОРЗИНУ
+
+    //-     div.item
+    //-         h4 Lenovo IdeaPad
+    //-         img(src="img/14 laptop Lenovo Ideapad 3 14ITL05 silver.webp" alt="Lenovo laptop")
+    //-         h5 20 000p
+    //-         button(type="submit") В КОРЗИНУ

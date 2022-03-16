@@ -1,0 +1,49 @@
+include header
+
+section.wrap.center.wrapper-column 
+    div.cart
+        h3.cart-title КОРЗИНА
+        div#cart-nav
+        h3.cart-final СОЗДАТЬ ЗАКАЗ
+
+    form#shop-order(action="")
+        div(class='form-control')
+            label(for='username') ИМЯ
+            input(
+                type='text',
+                id='username',
+                placeholder='ВАШЕ ИМЯ',
+                )
+        div(class='form-control')
+            label(for='phone') ТЕЛЕФОН
+            input(
+                type='text',
+                id='phone',
+                placeholder='+79999999999',
+                )
+        div(class='form-control')
+            label(for='email') ПОЧТА
+            input(
+                type='text',
+                id='email',
+                placeholder='mail@example.com',
+                )
+        div(class='form-control')
+            label(for='address') АДРЕС
+            textarea(
+                id='address',
+                placeholder='ГДЕ ВЫ',
+                )
+        div(class='form-rule')
+            label(for='rule') 
+                input(
+                    type='checkbox',
+                    id='rule',
+                    value='1'
+                    ) 
+                span  УСЛОВИЯ И ПОЛОЖЕНИЯ
+        div(class='form-control text-right')
+            button(class='button-primary' type='submit') ЗАКАЗАТЬ
+
+include footer 
+script(src='js/order.js')
