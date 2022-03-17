@@ -126,6 +126,7 @@ header {
 .product-title {
   height: 40px;
   font-weight: 800;
+  font-size: 16px;
 }
 
 .category {
@@ -218,6 +219,10 @@ header {
   height: 200px;
 }
 
+.cart-order:first-child {
+  margin-top: 40px;
+}
+
 .cart-oreder-image {
   margin-right: 30px;
 }
@@ -292,7 +297,7 @@ i {
 }
 
 .main h3 {
-  font-size: 40px;
+  font-size: 52px;
   margin: 50px 0;
 }
 

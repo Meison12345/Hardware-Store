@@ -102,6 +102,7 @@ header {
 .product-title {
     height: 40px;
     font-weight: 800;
+    font-size: 16px;
 }
 
 .category {
@@ -175,6 +176,9 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 200px;
+    &:first-child {
+        margin-top: 40px;
+    }
 }
 
 .cart-oreder-image {
@@ -241,7 +245,7 @@ i {
 .main {
     margin: 30px 0px;
     & h3 {
-        font-size: 40px;
+        font-size: 52px;
         margin: 50px 0;
     }
 }
