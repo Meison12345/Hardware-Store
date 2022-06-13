@@ -33,7 +33,7 @@ app.listen(port, () => {
 app.get('/', function(req, res) {
     let cat = new Promise(function(resolve, reject) {
         con.query(
-            "select id, name, cost, image, category from (select id,name,cost,image,category, if(if(@curr_category != category, @curr_category := category, '') != '', @k := 0, @k := @k + 1) as ind   from goods, ( select @curr_category := '' ) v ) goods where ind < 3",
+            "select id, name, cost, image, category from (select id,name,cost,image,category, if(if(@curr_category != category, @curr_category := category, '') != '', @k := 0, @k := @k + 1) as ind from goods, ( select @curr_category := '' ) v ) goods where ind < 3",
             function(error, result, field) {
                 if (error) return reject(error);
                 resolve(result);

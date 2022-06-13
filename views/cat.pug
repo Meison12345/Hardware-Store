@@ -1,7 +1,7 @@
 include header
 
 
-section.category
+section.category.wrapper-column
     h2 #{cat[0]['category']}
     div.wrap-product.center
         each val, index in goods
@@ -10,4 +10,9 @@ section.category
                         p.product-title #{val.name}
                         img(src="img/"+val.image alt="foto" class="product__img")
                         h3.product-cost #{val.cost.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$& ')} ₽
-                    button.addToCart В КОРЗИНУ
+                    button(
+                        class="add-to-cart"
+                        data-goods_id=val['id']
+                        ) В КОРЗИНУ
+                    
+include footer
