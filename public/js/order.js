@@ -1,7 +1,5 @@
 'use strict';
 try {
-
-
     document.querySelector('#shop-order').addEventListener('submit', function (el) {
         el.preventDefault();
         let username = document.querySelector('#username').value.trim();
@@ -9,41 +7,46 @@ try {
         let email = document.querySelector('#email').value.trim();
         let address = document.querySelector('#address').value.trim();
 
+        // Регулярные выражения для проверки номера телефона и адреса электронной почты
+        const phonePattern = /^(\+7|8)\s?\d{2,4}\s?\d{7}$/;
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
         if (!document.querySelector('#rule').checked) {
-            //С правилами не согласен
+            // С правилами не согласен
             Swal.fire({
                 title: 'Предупреждение',
                 text: 'Примите правила',
-                // type: 'info',
                 icon: 'error',
                 confirmButtonText: 'ОК',
             });
             return false;
         }
-        if (username == '' || phone == '' || email == '' || address == '') {
+        if (username === '' || !phone.match(phonePattern) || !email.match(emailPattern) || address === '') {
             Swal.fire({
                 title: 'Предупреждение',
-                text: 'Заполните все поля',
-                // type: 'info',
+                text: 'Заполните все поля корректно',
                 icon: 'error',
                 confirmButtonText: 'ОК',
             });
+            return false;
         }
 
+        console.log(username, phone, email, address);
+
         fetch('/finish-order', {
-                method: 'POST',
-                body: JSON.stringify({
-                    'username': username,
-                    'phone': phone,
-                    'address': address,
-                    'email': email,
-                    'key': JSON.parse(localStorage.getItem('cart'))
-                }),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            })
+            method: 'POST',
+            body: JSON.stringify({
+                'username': username,
+                'phone': phone,
+                'address': address,
+                'email': email,
+                'key': JSON.parse(localStorage.getItem('cart'))
+            }),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
             .then(function (response) {
                 return response.text();
             })
@@ -52,15 +55,13 @@ try {
                     Swal.fire({
                         title: 'Всё хорошо',
                         text: 'Удачно',
-                        type: 'info',
-                        // icon: 'error',
+                        icon: 'info',
                         confirmButtonText: 'ОК',
                     });
                 } else {
                     Swal.fire({
                         title: 'Возникли проблемы',
                         text: 'Ошибка',
-                        // type: 'info',
                         icon: 'error',
                         confirmButtonText: 'ОК',
                     });
