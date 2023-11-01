@@ -604,3 +604,7 @@ i {
     display: block;
     width: 100%;
 }
+
+html body.swal2-height-auto {
+  height: inherit !important;
+}
