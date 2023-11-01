@@ -543,4 +543,8 @@ i {
 .swiper-slide img {
   display: block;
   width: 100%;
-}/*# sourceMappingURL=style.css.map */
+}
+html body.swal2-height-auto {
+  height: inherit !important;
+}/*#
+/*# sourceMappingURL=style.css.map */
